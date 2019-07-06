@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  text-align: center;
+  background: rebeccapurple;
+  font-family: sans-serif;
+  margin: 100px 0;
+  color: whitesmoke;
+}
+
+img {
+  width: 300px;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: none;
+}
+
+.modal-body {
+  width: 500px;
+  height: 500px;
+  margin: 50vh auto;
+  transform: translateY(-25vh);
+  background-color: whitesmoke;
+}
+
+.modal-body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.target {
+  cursor: pointer;
+}
