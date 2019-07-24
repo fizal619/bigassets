@@ -61,7 +61,6 @@ startIndex += ITEMS_PER_PAGE;
 
 let lastPageY = 0;
 document.addEventListener("scroll", function(e) {
-
     const scrollIndex = parseInt(window.scrollY / 500);
 
     if(scrollIndex >= lastScrollIndex) {
