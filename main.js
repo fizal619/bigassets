@@ -3,6 +3,12 @@ const ITEMS_PER_PAGE = 5;
 // Index of how far we've loaded
 let idList = new Array(800);
 for (let i = 1; i < 800; i++) {
+
+  fetch(`https://fizal.me/pokeapi/api/v2/id/${i}.json`)
+    .then(function(r){
+      // need to load pokemons by their ids in order
+      return r.json();
+=======
     idList[i-1] = i;
 }
 
@@ -49,12 +55,15 @@ function getBatch(items, options) {
     .then(res => {
         // console.log(r);
         return Promise.all(res.map(otherRes => otherRes.json()) );
+
     })
     .then(function(data) {
         // console.log(data)
         renderItems(data);
     });
 }
+
+=======
 
 const results = getBatch(idList, {start: startIndex, itemsPerPage: ITEMS_PER_PAGE});
 startIndex += ITEMS_PER_PAGE;
@@ -70,3 +79,4 @@ document.addEventListener("scroll", function(e) {
     }
 
 });
+
